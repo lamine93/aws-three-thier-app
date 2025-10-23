@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Three-Tier Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>🚀 Three-Tier Application</h1>
+      <p class="subtitle">Gestion des utilisateurs</p>
+    </header>
+
+    <!-- Health Check -->
+    <section class="card">
+      <div class="card-header">
+        <h2>🏥 Health Check</h2>
+        <span id="healthStatus" class="badge badge-waiting">En attente</span>
+      </div>
+      <button id="btnHealth" class="btn btn-secondary">
+        <span>🔍</span> Vérifier le statut
+      </button>
+      <pre id="healthOutput" class="output"></pre>
+    </section>
+
+    <!-- Users Management -->
+    <section class="card">
+      <div class="card-header">
+        <h2>👥 Gestion des utilisateurs</h2>
+      </div>
+      
+      <!-- Add User Form -->
+      <div class="form-group">
+        <input 
+          type="text" 
+          id="userName" 
+          placeholder="Nom complet" 
+          class="input"
+        />
+        <input 
+          type="email" 
+          id="userEmail" 
+          placeholder="adresse@email.com" 
+          class="input"
+        />
+        <button id="btnAdd" class="btn btn-primary">
+          <span>➕</span> Ajouter
+        </button>
+        <button id="btnList" class="btn btn-secondary">
+          <span>📋</span> Lister
+        </button>
+      </div>
+
+      <div id="userMessage" class="message"></div>
+
+      <!-- Users Table -->
+      <div class="table-container">
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>ID</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersBody">
+            <tr>
+              <td colspan="4" class="empty-state">
+                Cliquez sur "Lister" pour afficher les utilisateurs
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- API Info -->
+    <section class="card info-card">
+      <details>
+        <summary>📡 Informations API</summary>
+        <div class="api-info">
+          <h3>Endpoints disponibles :</h3>
+          <ul>
+            <li><code>GET /health</code> → Status de l'API</li>
+            <li><code>GET /api/users</code> → Liste des utilisateurs</li>
+            <li><code>POST /api/users</code> → Créer un utilisateur</li>
+            <li><code>DELETE /api/users/:id</code> → Supprimer un utilisateur</li>
+          </ul>
+          <p class="note">
+            <strong>Note:</strong> L'API doit avoir CORS activé avec 
+            <code>Access-Control-Allow-Origin: *</code>
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <p class="muted">Three-Tier Architecture • Frontend Test Interface</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

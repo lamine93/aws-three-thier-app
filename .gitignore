@@ -1,0 +1,6 @@
+infra/envs/dev/*.tfvars
+infra/envs/dev/*.tfvars.json
+infra/envs/dev/.terraform/
+infra/envs/dev/*.tfstate
+infra/envs/dev/*.tfstate.backup
+infra/envs/dev/.terraform.lock.hcl
