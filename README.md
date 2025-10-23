@@ -145,6 +145,8 @@ The API exposes simple routes for listing and adding users.
 All ECS task logs are centralized in **CloudWatch Logs** for debugging and observability.
 
 ![CloudWatch Logs](./resources/images/cloudwatch-logs.png)
+![CloudWatch Logs](./resources/images/cloudwatch.png)
+
 > ✅ Each API request is visible in real time from CloudWatch metrics and logs.
 
 ---
