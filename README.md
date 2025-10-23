@@ -141,14 +141,6 @@ The API exposes simple routes for listing and adding users.
 
 ---
 
-### 💻 Optional Frontend (Static Web UI)
-A minimal web interface (HTML/CSS/JS) allows users to add and list entries from the API.
-
-![Frontend UI](./resources/images/frontend.png)
-> ✅ The frontend interacts directly with the backend API using the ALB public DNS.
-
----
-
 ### 📊 Monitoring & Logs
 All ECS task logs are centralized in **CloudWatch Logs** for debugging and observability.
 
