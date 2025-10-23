@@ -95,5 +95,67 @@ http://<alb-dns-name>/api/users
 | **Version Control** | Git & GitHub | Source control and collaboration |
 
 
+---
+
+## 📸 Screenshots & Demo
+
+Below are some screenshots showing the successful deployment and operation of the three-tier application on AWS.
+
+### 🧱 Terraform Deployment
+The entire infrastructure (VPC, ECS, ALB, RDS, etc.) is provisioned automatically with Terraform.
+
+![Terraform Apply](./images/terraform-apply.png)
+> ✅ Terraform apply completed successfully — all resources deployed via Infrastructure as Code.
+
+---
+
+### 🚀 ECS Cluster and Service
+The Flask API container runs on **AWS ECS Fargate** in private subnets.
+
+![ECS Service](./images/ecs-service.png)
+> ✅ ECS service is running with healthy tasks managed by Fargate.
+
+---
+
+### 🌐 Application Load Balancer (ALB)
+The ALB routes incoming HTTP requests to the ECS tasks through a target group.
+
+![ALB Targets](./images/alb-targets.png)
+> ✅ Target group reports healthy ECS containers, confirming connectivity between the ALB and the backend.
+
+---
+
+### 🗄️ Amazon RDS Database
+The application connects to an **RDS PostgreSQL** database for persistent data storage.
+
+![RDS Instance](./images/rds-instance.png)
+> ✅ RDS instance is available and connected to the Flask API via Secrets Manager credentials.
+
+---
+
+### 🧩 Application API (Flask)
+The API exposes simple routes for listing and adding users.
+
+![API Test](./images/api-users.png)
+> ✅ The endpoint `/api/users` returns data successfully through the ALB DNS.
+
+---
+
+### 💻 Optional Frontend (Static Web UI)
+A minimal web interface (HTML/CSS/JS) allows users to add and list entries from the API.
+
+![Frontend UI](./images/frontend.png)
+> ✅ The frontend interacts directly with the backend API using the ALB public DNS.
+
+---
+
+### 📊 Monitoring & Logs
+All ECS task logs are centralized in **CloudWatch Logs** for debugging and observability.
+
+![CloudWatch Logs](./images/cloudwatch-logs.png)
+> ✅ Each API request is visible in real time from CloudWatch metrics and logs.
+
+---
+
 
 
